@@ -11,9 +11,12 @@ module DeliverabilityCenterApid
     end
 
     def process
+      full_name = "#{@type + @name}"
+      get_name = "get" + @name
+
       case type
       when "get"
-        ret = apid.type+name!(params)
+        ret = apid.full_name!(params)
         #Fuzzy Search
         # if name == "Reason"
         #   response = ret.append("total" : ret.count, "exact" : ret.count)
@@ -21,16 +24,18 @@ module DeliverabilityCenterApid
         #   rets = apid."get + #{name}"!(id: ret)
         #end
       when "edit"
-        ret = apid.type+name!(params)
-        response = apid."get + #{name}"!(id: ret)
+        ret = apid.full_name!(params)
+
+        response = apid.get_name!(id: ret)
       when "add"
-        ret = apid.type+name!(params)
-        response = apid."get + #{name}"!(id: ret)
+        ret = apid.full_name!(params)
+        response = apid.get_name!(id: ret)
       when "delete"
-        response = apid.type+name!(params)
+        response = apid.full_name!(params)
       else
         puts "error no type given"
       end
     end
+
   end
 end

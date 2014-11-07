@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
   spec.name = %q{deliverability-center-apid}
   spec.authors = "Kyle Kern"
-  spec.version = "1.0.0"
+  spec.version = "1.1.0"
   spec.date = %q{2014-11-06}
   spec.summary = %q{This is used for making api calls to apid for deliverability-center-apid}
   spec.files = [
