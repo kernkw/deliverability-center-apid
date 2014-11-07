@@ -1,5 +1,5 @@
 module DeliverabilityCenterApid
-  require 'apid'
+  require 'apid-0.0.3.gem'
   class Client
     attr_reader :apid, :type, :name, :params
 
