@@ -19,7 +19,7 @@ module DeliverabilityCenterApid
         #   response = ret.append("total" : ret.count, "exact" : ret.count)
         # else
         #   rets = apid."get + #{name}"!(id: ret)
-        end
+        #end
       when "edit"
         ret = apid.type+name!(params)
         response = apid."get + #{name}"!(id: ret)
