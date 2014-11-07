@@ -12,24 +12,24 @@ module DeliverabilityCenterApid
 
     def process
       case type
-        when "get"
-          ret = apid.type+name!(params)
-          #Fuzzy Search
-          if name == "Reason"
-            response = ret.append("total" : ret.count, "exact" : ret.count)
-          else
-            rets = apid."get + #{name}"!(id: ret)
-          end
-        when "edit"
-          ret = apid.type+name!(params)
-          response = apid."get + #{name}"!(id: ret)
-        when "add"
-          ret = apid.type+name!(params)
-          response = apid."get + #{name}"!(id: ret)
-        when "delete"
-          response = apid.type+name!(params)
-        else
-          raise "error no type given"
+      when "get"
+        ret = apid.type+name!(params)
+        #Fuzzy Search
+        # if name == "Reason"
+        #   response = ret.append("total" : ret.count, "exact" : ret.count)
+        # else
+        #   rets = apid."get + #{name}"!(id: ret)
+        end
+      when "edit"
+        ret = apid.type+name!(params)
+        response = apid."get + #{name}"!(id: ret)
+      when "add"
+        ret = apid.type+name!(params)
+        response = apid."get + #{name}"!(id: ret)
+      when "delete"
+        response = apid.type+name!(params)
+      else
+        puts "error no type given"
       end
     end
   end
